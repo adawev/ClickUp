@@ -1,30 +1,29 @@
 package diyor.adawev.clickup.model;
 
+import diyor.adawev.clickup.model.entity.AccessType;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity(name = "users")
+import java.util.List;
+
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class User {
+public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(nullable = false)
-    private String full_name;
-    @Email
-    @Column(nullable = false, unique = true)
-    private String email;
+    private String name;
+    @OneToMany
+    private List<Space> space;
+    @Enumerated(EnumType.STRING)
+    private AccessType accessType=AccessType.MEMBER;
     @Column(nullable = false)
-    private String password;
+    private boolean achieved=false;
     @Column(nullable = false)
     private String color;
-    @Column(nullable = false)
-    private String initial_letter;
-    @Column(nullable = false)
-    private Integer avatar;
 }
