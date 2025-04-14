@@ -8,7 +8,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class SpaceUserDto {
-    private Integer space;
-    private Integer member;
+public class CheckListItemDto {
+    private String name;
+    private Integer checklist_id;
+    private String resolved;
+    private Integer user_id;
 }

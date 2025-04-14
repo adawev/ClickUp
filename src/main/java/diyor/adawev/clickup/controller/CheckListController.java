@@ -6,19 +6,16 @@ import diyor.adawev.clickup.model.CheckList;
 import diyor.adawev.clickup.model.Project;
 import diyor.adawev.clickup.model.Result;
 import diyor.adawev.clickup.service.CheckListService;
-import diyor.adawev.clickup.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/comment")
-public class CommentController {
+@RequestMapping("/checklist")
+public class CheckListController {
     @Autowired
-    CommentService commentService;
-    @Autowired
-    private CheckListService checkListService;
+    CheckListService checkListService;
 
     @GetMapping
     public List<CheckList> getAll() {
@@ -40,5 +37,4 @@ public class CommentController {
     public Result delete(@PathVariable Integer id) {
         return checkListService.delete(id);
     }
-
 }
