@@ -1,3 +1,2 @@
 This
-
-![Uploading photo_2025-04-14_15-14-16.jpg…]()
+![Uploading ClickUp.drawio (1).png…]()
